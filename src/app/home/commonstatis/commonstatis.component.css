@@ -1,0 +1,100 @@
+.smail {
+    border-radius: .25rem;
+    box-shadow: 1px gray;
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.col-lg-3,
+.col-6 {
+    margin-left: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.icon {
+    color: rgb(0, 0, 0, .15);
+    z-index: 0;
+}
+
+.inner {
+    color: white;
+}
+
+.card-body {
+    border: none;
+}
+
+.icon>.mat-icon {
+    font-size: 70px;
+    position: absolute;
+    right: 15px;
+    left: 150px;
+    top: 10px;
+    transition: all .3s linear;
+}
+
+.footer {
+    background-color: #1b5e75;
+}
+
+.footer>.foter {
+    margin-top: 20px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.footer-refech {
+    background-color: rgb(147, 143, 56);
+}
+
+.footer-refech>.foter {
+    margin-top: 20px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.footer-plus {
+    background-color: rgba(45, 93, 34, 0.69);
+}
+
+.footer-plus>.foter {
+    margin-top: 20px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.footer-char {
+    background-color: rgb(142, 42, 42);
+}
+
+.footer-char>.foter {
+    margin-top: 20px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.top-s {
+    margin-top: 10px;
+}
+
+.soild {
+    border-bottom: 1px solid lightgray;
+}
+
+.mat-expansion-panel {
+    border-top: 2px solid blue;
+}

@@ -1,0 +1,34 @@
+.top {
+    margin-top: 5px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-icon-button {
+    border-radius: none;
+}
+
+.mat-expansion-panel-header .open,
+.mat-expanded .mat-expansion-panel-header .close {
+    display: inline-block;
+}
+
+.mat-expanded .mat-expansion-panel-header .open,
+.mat-expansion-panel-header .close {
+    display: none;
+}
+
+.mat-expansion-panel-header-title {
+    width: 473px;
+    margin-right: 0px;
+}
+
+.soild {
+    border-bottom: lightgray;
+}
+
+.mat-expansion-panel {
+    border-top: 2px solid blue;
+}

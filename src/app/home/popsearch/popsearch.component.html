@@ -1,0 +1,30 @@
+<mat-expansion-panel class="top" expanded="true" hideToggle #panel>
+    <mat-expansion-panel-header class="soild">
+        <mat-panel-title>
+            <mat-icon class="tet">search</mat-icon>
+            <span>Keyword Search</span>
+        </mat-panel-title>
+        <mat-panel-description>
+            <span *ngIf="!panel.expanded" class="material-icons open">add</span>
+            <span *ngIf="panel.expanded" class="material-icons close">remove</span>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="keyword">
+            <th mat-header-cell *matHeaderCellDef> Keyword </th>
+            <td mat-cell *matCellDef="let element"> {{element.keyword}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="count">
+            <th mat-header-cell *matHeaderCellDef> Count </th>
+            <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator class="top" appStylePaginator (page)="2" [length]="6" [pageSize]="5" showFirstLastButtons>
+    </mat-paginator>
+</mat-expansion-panel>

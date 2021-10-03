@@ -1,0 +1,40 @@
+.tet {
+    color: black;
+}
+
+.top {
+    margin-top: 20px;
+}
+
+a {
+    font-size: 12px;
+    width: 100px;
+}
+
+th {
+    font-size: 12px;
+    width: 100px;
+}
+
+.mat-expansion-panel-header .open,
+.mat-expanded .mat-expansion-panel-header .close {
+    display: inline-block;
+}
+
+.mat-expanded .mat-expansion-panel-header .open,
+.mat-expansion-panel-header .close {
+    display: none;
+}
+
+.mat-expansion-panel-header-title {
+    width: 473px;
+    margin-right: 0px;
+}
+
+.soild {
+    border-bottom: lightgray;
+}
+
+.mat-expansion-panel {
+    border-top: 2px solid blue;
+}

@@ -1,0 +1,115 @@
+<mat-sidenav-container class="example-containe col-md-12" autosize>
+    <mat-toolbar class=" col-md-12 example-toolbar navbar-dark bg-dark">
+        <a class="btn btn-dark" (click)="isExpanded = !isExpanded">
+            <mat-icon>menu</mat-icon>
+        </a>
+        <span class="spacer"></span>
+        <a class="nav-link text-white " href="#">john Smith</a>
+        <a class="nav-link text-white" href="#">Logout</a>
+        <a class="nav-link text-white ex" mat-icon-button [matMenuTriggerFor]="menu" href="#">
+            <mat-icon class="icon-ex">settings</mat-icon>
+        </a>
+
+    </mat-toolbar>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span>Clear cache</span>
+        </button>
+    </mat-menu>
+    <mat-sidenav #sidenav class="example-sidenav bg-dark" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+        <mat-nav-list>
+            <mat-list-item class="parent bg-dark">
+                <!--<span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>-->
+                <img src="../../../assets/logo-mini.png " alt="">
+                <span class="full-width" *ngIf="isExpanded || isShowing">nopCommerce</span>
+                <!--   <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>-->
+            </mat-list-item>
+            <mat-list-item *ngIf="isExpanded || isShowing">
+                <div class="input-group">
+                    <input class="form-control border-end-0 border text-white bg-dark" type="search" value="search" id="example-search-input">
+                    <span class="input-group-append">
+                        <button class="btn btn-outline-secondary bg-dark border-start-0 border-bottom-1 border ms-n5 " type="button">
+                            <mat-icon class="text-white">search</mat-icon>
+                        </button>
+                    </span>
+                </div>
+
+            </mat-list-item>
+
+            <mat-list-item class="parent active">
+                <span class="full-width1" *ngIf="isExpanded || isShowing">Dashborad</span>
+                <mat-icon mat-list-icon class="text-white">laptop</mat-icon>
+            </mat-list-item>
+            <mat-list-item *ngFor="let item of menus" (click)="showSubmenu = !showSubmenu" class="parent">
+                <span class="full-width1" *ngIf="isExpanded || isShowing">{{item.displayName}}</span>
+                <mat-icon mat-list-icon class="text-white">{{item.iconName}}</mat-icon>
+                <mat-icon class="menu-button text-white" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+
+            </mat-list-item>
+            <mat-list-item *ngFor="let item of menus">
+                <span class="full-width1" *ngIf="isExpanded || isShowing">{{item.displayName}}</span>
+                <mat-icon mat-list-icon class="text-white">{{item.iconName}}</mat-icon>
+                <mat-icon class="menu-button text-white" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+            </mat-list-item>
+            <!--  <span *ngFor="let item of menus">
+                <span *ngIf="item.children && item.children.length > 0">
+                  <mat-accordion hideToggle>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header class="bg-dark text-white" hideToggle='false'>
+                          <div fxLayout="row" fxLayoutAlign="space-between center" > 
+                            <mat-icon>{{item.iconName}}</mat-icon>
+                           <span *ngIf="isExpanded || isShowing"> {{item.displayName}} </span>
+            </div>
+            <mat-icon></mat-icon>
+            </mat-expansion-panel-header>
+            <span *ngFor="let child of item.children">
+                        <mat-list-item routerLink="[child.route]">
+                          <div fxLayout="row" fxLayoutAlign="space-between center" > 
+                            <mat-icon>{{child.iconName}}</mat-icon>
+                            {{child.displayName}}
+                          </div>
+                        </mat-list-item>
+                      </span>
+            </mat-expansion-panel>
+            </mat-accordion>
+            </span>
+            <span *ngIf="!item.children || item.children.length === 0">
+                  <mat-list-item routerLink="[item.route]">
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                      <mat-icon>{{item.iconName}}</mat-icon>
+                      {{item.displayName}}
+                    </div>
+                  </mat-list-item>
+                </span>
+            </span-->
+            <!--<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+                <mat-list-item>SubSubmenu Item 1</mat-list-item>
+                <mat-list-item>SubSubmenu Item 2</mat-list-item>
+            </div>-->
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <div class="contrainner-fulid">
+        <h1>Dashborad</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <app-nop-new class="buttom"></app-nop-new>
+                <app-commonstatis></app-commonstatis>
+                <div class="row">
+                    <app-order-total class="col-md-7"></app-order-total>
+                    <app-lncom-order class="col-md-5"></app-lncom-order>
+                </div>
+                <div class="row">
+                    <app-lastorder class="col-md-7"></app-lastorder>
+                    <app-popsearch class="col-md-5"></app-popsearch>
+                </div>
+                <div class="row">
+                    <app-bestquantity class="col-md-6"></app-bestquantity>
+                    <app-amount class="col-md-6"></app-amount>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</mat-sidenav-container>

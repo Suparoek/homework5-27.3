@@ -1,0 +1,47 @@
+<mat-expansion-panel class="top" expanded="true" hideToggle #panel>
+    <mat-expansion-panel-header class="right-aligned-header">
+        <mat-panel-title>
+            <mat-icon class="tet">star_outline</mat-icon>
+            <span>Bestsellers by amount</span>
+        </mat-panel-title>
+        <mat-panel-description class="justify-content-end">
+            <span *ngIf="!panel.expanded" class="material-icons open">add</span>
+            <span *ngIf="panel.expanded" class="material-icons close">remove</span>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table mat-table [dataSource]="dataSource" style="width: 100%;">
+
+        <!--- Note that these columns can be defined in any order. 
+      The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef>Total quantity</th>
+            <td mat-cell *matCellDef="let element">{{element.total}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef>Total amount(excl tax)</th>
+            <td mat-cell *matCellDef="let element">{{element.amount}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="view">
+            <th mat-header-cell *matHeaderCellDef>View</th>
+            <td mat-cell *matCellDef="let element">
+                <a href="#" class="bottom btn btn-light">
+                    <mat-icon>visibility</mat-icon>{{element.view}}</a>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator class="top" appStylePaginator (page)="3" [length]="12" [pageSize]="5" showFirstLastButtons>
+    </mat-paginator>
+</mat-expansion-panel>

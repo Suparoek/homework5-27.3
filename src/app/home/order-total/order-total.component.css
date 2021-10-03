@@ -1,0 +1,47 @@
+.top {
+    margin-top: 10px;
+}
+
+.soild {
+    border-bottom: 1px solid lightgray;
+}
+
+table {
+    width: 100%;
+}
+
+.right-button {
+    margin-top: 10px;
+    float: right;
+    border: 1px solid lightgray;
+}
+
+.rg {
+    padding-top: 5px;
+}
+
+.mat-row:nth-child(even) {
+    background-color: gainsboro;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: white;
+}
+
+.mat-expansion-panel-header .open,
+.mat-expanded .mat-expansion-panel-header .close {
+    display: inline-block;
+}
+
+.mat-expanded .mat-expansion-panel-header .open,
+.mat-expansion-panel-header .close {
+    display: none;
+}
+
+.mat-expansion-panel-header-title {
+    margin-right: 0px;
+}
+
+.mat-expansion-panel {
+    border-top: 2px solid blue;
+}

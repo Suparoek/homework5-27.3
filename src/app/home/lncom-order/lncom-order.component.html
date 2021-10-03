@@ -1,0 +1,42 @@
+<mat-expansion-panel class="top" expanded="true" hideToggle #panel>
+    <mat-expansion-panel-header class="soild">
+        <mat-panel-title>
+            <mat-icon class="text-dark">hourglass_full</mat-icon>
+            <span>Incomplete order</span>
+        </mat-panel-title>
+        <mat-panel-description class="justify-content-end">
+            <span *ngIf="!panel.expanded" class="material-icons open">add</span>
+            <span *ngIf="panel.expanded" class="material-icons close">remove</span>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="scoll">
+        <table mat-table [dataSource]="dataSource" class="top">
+
+            <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="item">
+                <th mat-header-cell *matHeaderCellDef> Item</th>
+                <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="total">
+                <th mat-header-cell *matHeaderCellDef>Total</th>
+                <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="count">
+                <th mat-header-cell *matHeaderCellDef>Count</th>
+                <td mat-cell *matCellDef="let element">
+                    <a href="#" class="bottom btn btn-light">
+                        <mat-icon>visibility</mat-icon>{{element.count}}</a>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</mat-expansion-panel>

@@ -1,0 +1,21 @@
+.icon {
+    color: rgb(0, 0, 0, .15);
+    z-index: 0;
+}
+
+.tram {
+    transform: scale(2);
+    align-content: unset;
+}
+
+.solid {
+    border-bottom: 1px solid lightgray;
+}
+
+.row {
+    margin-top: 10px;
+}
+
+.mat-expansion-panel {
+    border-top: 2px solid blue;
+}
